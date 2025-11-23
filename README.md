@@ -6,6 +6,13 @@ This model uses linear regression, with batch gradient descent to predict values
 Analysing the dataset by plotting a scatter plot using pandas:
 <img width="782" height="681" alt="image" src="https://github.com/user-attachments/assets/2f5911c7-015c-4142-9a53-316cf4085a98" />
 
+Guide to the abbreviations:
+s1- Total serum cholesterol
+s2- LDL
+s3- HDL
+s4- Total Cholesterol
+s5- Serum triglycerides
+s6- Blood sugar level
 
 
 Error minimisation using gradient descent:
