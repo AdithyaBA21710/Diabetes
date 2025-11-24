@@ -1,9 +1,9 @@
 import numpy as np
-import sys
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
 data=load_diabetes()
@@ -30,12 +30,16 @@ theta=np.random.randn(n, 1)*0.01
 
 eta=0.01
 n_iterations=5000
+lam = 0.1 
 
 loss_history = []
 for i in range(n_iterations):
     pred=X_train_b.dot(theta)
     errors=pred-y_train
     gradients=(2/m)*X_train_b.T.dot(errors)
+    reg = 2.0 * lam * theta
+    reg[0, 0] = 0.0
+    gradients += reg
     theta=theta-(eta*gradients)
     mse = np.sum(errors**2)/m
     loss_history.append(mse)
@@ -50,9 +54,10 @@ plt.ylabel("Training MSE")
 plt.title("Gradient Descent")
 plt.show()
 
-sample = [X_test[13].reshape(1, -1)]
+sample = X_test[0].reshape(1, -1)
 sample_scaled = scaler.transform(sample)
 sample_b = np.c_[np.ones((1,1)), sample_scaled]
 pred_value = sample_b.dot(theta)
 print("Predicted target:", pred_value[0,0])
 print("True target:", y_test[0,0])
+
