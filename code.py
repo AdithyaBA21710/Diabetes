@@ -37,7 +37,7 @@ for i in range(n_iterations):
     errors=pred-y_train
     gradients=(2/m)*X_train_b.T.dot(errors)
     theta=theta-(eta*gradients)
-    mse = (np.sum(errors)**2)/m
+    mse = np.sum(errors)**2/m
     loss_history.append(mse)
 
 test_preds = X_test_b.dot(theta)
