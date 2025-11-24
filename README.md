@@ -18,7 +18,7 @@ s6- Blood sugar level <br>
 Error minimisation using gradient descent:
 <img width="802" height="680" alt="image" src="https://github.com/user-attachments/assets/d08f41ad-3a52-44b7-b80a-6b69889e3dad" />
 
-When Ridge regression is applied to the problem, the MSE reduces slightly, while the model predicts better than before (without L2 regression)
+When Ridge regression is applied to the problem, the RMSE reduces slightly, while the model predicts better than before (without L2 regression)
 <img width="1437" height="307" alt="image" src="https://github.com/user-attachments/assets/b4bce2fc-de07-48ef-a806-d6b1f45807fb" />
 
 
